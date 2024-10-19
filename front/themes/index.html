@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mis temas</title>
+        <link href="../global.css" rel="stylesheet" />
+        <script src="../guard.js" defer></script>
+        <script src="./mythemes.js" defer type="module"></script>
+    </head>
+    <body>
+        <h1>Mis temas</h1>
+        <p id="myInfo"></p>
+        <button type="button" id="logout">Cerrar sesión</button>
+        <h2>Eliminar tema</h2>
+        <form>
+            <label for="id">Identificador de comentario.</label>
+            <input type="number" name="id" id="deleteId" value="" />
+            <button type="button" id="deleteButton"> Eliminar</button>
+        </form>
+        <section id="themes"></section>
+    </body>
+</html>
