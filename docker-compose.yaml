@@ -29,7 +29,7 @@ services:
       - POSTGRES_USER=${PGUSER}
       - POSTGRES_PASSWORD=${PGPASSWORD}
     ports:
-      - 5432:5432
+      - 5434:5432
   proxy:
     image: nginx:alpine
     container_name: proxy
