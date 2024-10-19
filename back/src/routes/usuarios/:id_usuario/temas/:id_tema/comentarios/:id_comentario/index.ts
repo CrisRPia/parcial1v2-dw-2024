@@ -2,7 +2,6 @@ import { FastifyPluginAsyncTypebox } from "@fastify/type-provider-typebox";
 import { SafeType } from "../../../../../../../utils/typebox.js";
 import { comentarioSchema } from "../../../../../../../types/comentario.js";
 import {
-    create,
     erase,
     modify,
 } from "../../../../../../../services/comentarios.js";
@@ -31,32 +30,6 @@ export default (async (fastify) => {
             );
 
             return result;
-        },
-    });
-
-    fastify.post("/", {
-        onRequest: [fastify.verifyJWT, fastify.verifySelf],
-        schema: {
-            params: SafeType.Pick(comentarioSchema, [
-                "id_usuario",
-                "id_tema",
-                "id_comentario",
-            ]),
-            body: SafeType.Pick(comentarioSchema, ["descripcion"]),
-            response: {
-                200: SafeType.Array(comentarioSchema),
-                ...SafeType.CreateErrors(["unauthorized"]),
-            },
-            tags: ["comentarios"],
-        },
-        async handler(request, reply) {
-            const result = await create(
-                request.params.id_tema,
-                request.params.id_comentario,
-                request.body.descripcion
-            );
-
-            return reply.code(201).send(result);
         },
     });
 
