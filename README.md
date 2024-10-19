@@ -6,20 +6,20 @@
 
 #### Implementar login
 
-- Si se loguea un admin le muestra la lista completa de temas.
-- Si se loguea un no admin le muestra la lista de sus temas.
-- Es necesario poder verificar el usuario logueado.
+-   Si se loguea un admin le muestra la lista completa de temas.
+-   Si se loguea un no admin le muestra la lista de sus temas.
+-   Es necesario poder verificar el usuario logueado.
 
 #### Implementar vista de temas
 
-- Crear una página para mostrar los temas del usuario.
-- Crear una página para mostrar todos los temas.
-- No es necesario implementar creación, modificación y borrado de temas.
+-   Crear una página para mostrar los temas del usuario.
+-   Crear una página para mostrar todos los temas.
+-   No es necesario implementar creación, modificación y borrado de temas.
 
 #### Implementar CRUD de comentarios para el modelo dado según las siguientes reglas:
 
-- Solo el administrador puede modificar un comentario.
-- Solo el creador o administrador puede borrar un comentario.
+-   Solo el administrador puede modificar un comentario.
+-   Solo el creador o administrador puede borrar un comentario.
 
 Puedes consultar la siguiente lista de cotejo por más detalles.
 

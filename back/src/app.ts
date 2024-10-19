@@ -7,28 +7,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export type AppOptions = {
-  // Place your custom options for app below here.
+    // Place your custom options for app below here.
 } & Partial<AutoloadPluginOptions>;
 
 // Pass --options via CLI arguments in command to enable these options.
 const options: AppOptions = {};
 
 const app: FastifyPluginAsync<AppOptions> = async (
-  fastify,
-  opts
+    fastify,
+    opts
 ): Promise<void> => {
-  void fastify.register(AutoLoad, {
-    dir: path.join(__dirname, "plugins"),
-    options: opts,
-    forceESM: true,
-  });
+    void fastify.register(AutoLoad, {
+        dir: path.join(__dirname, "plugins"),
+        options: opts,
+        forceESM: true,
+    });
 
-  void fastify.register(AutoLoad, {
-    dir: path.join(__dirname, "routes"),
-    options: opts,
-    forceESM: true,
-    routeParams: true,
-  });
+    void fastify.register(AutoLoad, {
+        dir: path.join(__dirname, "routes"),
+        options: opts,
+        forceESM: true,
+        routeParams: true,
+    });
 };
 
 export default app;

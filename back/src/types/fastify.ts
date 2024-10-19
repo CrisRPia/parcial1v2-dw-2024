@@ -3,24 +3,24 @@ import { UsuarioType } from "./usuario.js";
 // import { UsuarioType } from "./user.js";
 
 export interface authenticateFunction {
-  (request: FastifyRequest, reply: FastifyReply): Promise<void>;
+    (request: FastifyRequest, reply: FastifyReply): Promise<void>;
 }
 
 // Most importantly, use declaration merging to add the custom property to the Fastify type system
 declare module "fastify" {
-  interface FastifyInstance {
-    verifyJWT: authenticateFunction;
-    verifyAdmin: authenticateFunction;
-    verifySelf: authenticateFunction;
-    verifySelfOrAdmin: authenticateFunction;
-    verifyTemaCreator: authenticateFunction;
-    verifyParamsInBody: authenticateFunction;
-  }
+    interface FastifyInstance {
+        verifyJWT: authenticateFunction;
+        verifyAdmin: authenticateFunction;
+        verifySelf: authenticateFunction;
+        verifySelfOrAdmin: authenticateFunction;
+        verifyTemaCreator: authenticateFunction;
+        verifyParamsInBody: authenticateFunction;
+    }
 }
 
 declare module "@fastify/jwt" {
-  interface FastifyJWT {
-    payload: UsuarioType;
-    user: UsuarioType;
-  }
+    interface FastifyJWT {
+        payload: UsuarioType;
+        user: UsuarioType;
+    }
 }
