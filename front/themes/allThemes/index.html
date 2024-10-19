@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Mis temas</title>
-        <link href="../global.css" rel="stylesheet" />
-        <script src="../guard.js" defer></script>
-        <script src="./mythemes.js" defer type="module"></script>
+        <title>Todos los temas</title>
+        <link href="../../global.css" rel="stylesheet" />
+        <script src="../../guard.js" defer></script>
+        <script src="./allThemes.js" defer type="module"></script>
     </head>
     <body>
         <h1>Mis temas</h1>
@@ -25,14 +25,6 @@
             <label for="comment">Comentario</label>
             <input type="text" name="comment" value="" id="createCommentDescription">
             <button type="button" id="createButton">Crear comentario</button>
-        </form>
-        <h2>Modificar comentario.</h2>
-        <form>
-            <label for="id">Identificador de tema.</label>
-            <input type="number" name="id" value="" id="createId">
-            <label for="comment">Comentario</label>
-            <input type="text" name="comment" value="" id="createCommentDescription">
-            <button type="button" id="createButton">Modificar comentario</button>
         </form>
         <section id="themes"></section>
     </body>

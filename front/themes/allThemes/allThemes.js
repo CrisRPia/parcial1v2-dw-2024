@@ -1,4 +1,4 @@
-import { getLogin, getAuthorization } from "../localstorage.js";
+import { getLogin, getAuthorization } from "../../localstorage.js";
 
 //<!doctype html>
 //<html lang="es">
@@ -62,17 +62,10 @@ const deleteButton = document.getElementById("deleteButton");
 async function main() {
     const login = getLogin();
 
-    if (
-        login.usuario.is_admin &&
-        confirm("Eres administrador, quieres ver todos los temas?")
-    ) {
-        window.location.href = "./allThemes";
-    }
-
     myInfoP.textContent = `Hola ${login.usuario.username}`;
 
     const result = await fetch(
-        `http://localhost/back/usuarios/${login.usuario.id_usuario}/temas/`,
+        `http://localhost/back/temas/`,
         {
             method: "GET",
             headers: {
