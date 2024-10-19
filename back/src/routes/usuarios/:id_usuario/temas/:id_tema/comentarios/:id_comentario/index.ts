@@ -21,6 +21,7 @@ export default (async (fastify) => {
                 200: SafeType.Array(comentarioSchema),
                 ...SafeType.CreateErrors(["unauthorized"]),
             },
+            tags: ["comentarios"],
         },
         async handler(request, reply) {
             const result = await modify(
@@ -46,6 +47,7 @@ export default (async (fastify) => {
                 200: SafeType.Array(comentarioSchema),
                 ...SafeType.CreateErrors(["unauthorized"]),
             },
+            tags: ["comentarios"],
         },
         async handler(request, reply) {
             const result = await create(
@@ -69,6 +71,7 @@ export default (async (fastify) => {
             response: {
                 200: SafeType.Array(comentarioSchema),
             },
+            tags: ["comentarios"],
         },
         async handler(request, reply) {
             const result = await erase(
